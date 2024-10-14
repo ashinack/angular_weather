@@ -1,0 +1,89 @@
+<!-- <div class="weather-container">
+  <h1>Weather App</h1>
+  <input type="text" [(ngModel)]="city" placeholder="Enter city name" />
+  <button (click)="getWeather()">Get Weather</button>
+
+  <div *ngIf="weatherData">
+    <h2>Weather in {{ weatherData.name }}</h2>
+    <p>Temperature: {{ weatherData.main.temp }} °C</p>
+    <p>Weather: {{ weatherData.weather[0].description }}</p>
+    <p>Humidity: {{ weatherData.main.humidity }}%</p>
+    <p>Wind Speed: {{ weatherData.wind.speed }} m/s</p>
+  </div>
+</div> -->
+<div class="main-div">
+  <div class="weather-check-sec">
+    <div class="search-sec">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <span class="material-symbols-outlined search-icon" matPrefix>
+          search
+        </span>
+        <input
+          type="text"
+          name="city"
+          matInput
+          [(ngModel)]="city"
+          placeholder="Enter city name"
+          value="Search"
+        />
+      </mat-form-field>
+      <div class="btn" (click)="getWeather(city)">
+        <span class="material-symbols-outlined"> location_on </span>
+      </div>
+    </div>
+    <div class="image-div">
+      <div class="image-sec"></div>
+      <div class="Date">
+        <span class="day">Tuesday</span>
+        <span>15 Jan 2019</span>
+      </div>
+      <div class="location">
+        <span>Chennai</span>
+      </div>
+      <span class="material-symbols-outlined centered-city1">
+        location_on
+      </span>
+      <span class="centered-city"
+        >{{ weatherData != null ? weatherData.name : "" }}
+      </span>
+      @if(weatherData != null){
+      <div class="centered">
+        {{ weatherData != null ? weatherData.main.temp : "" }} °C
+      </div>
+      }
+    </div>
+
+    <div class="info-sec">
+      <div class="each-sec-main">
+        <div class="wind">
+          <span class="material-symbols-outlined"> air </span>
+          <span>Wind</span>
+          <span
+            >{{ weatherData != null ? weatherData.wind.speed : "" }} m/s</span
+          >
+        </div>
+        <div class="pressure">
+          <span class="material-symbols-outlined"> device_thermostat </span>
+          <span>Pressure</span>
+          <span
+            >{{ weatherData != null ? weatherData.main.pressure : "" }} MB
+          </span>
+        </div>
+        <div class="humidity">
+          <span class="material-symbols-outlined"> humidity_percentage </span>
+          <span>Humidity</span>
+          <span
+            >{{ weatherData != null ? weatherData.main.humidity : "" }} %</span
+          >
+        </div>
+      </div>
+
+      <!-- <h3>More Information</h3> -->
+      <div class="inside-sec">
+        <span class="material-symbols-outlined"> sunny </span>
+        <span class="material-symbols-outlined"> explore </span>
+        <span class="material-symbols-outlined"> mood </span>
+      </div>
+    </div>
+  </div>
+</div>
