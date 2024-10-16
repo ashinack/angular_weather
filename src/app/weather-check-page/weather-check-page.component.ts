@@ -12,6 +12,8 @@ export class WeatherCheckPageComponent {
   city: any;
   locationName: any;
   currentDate: any;
+  day: any;
+  remaining: any;
 
   constructor(
     private weatherService: WeatherService,
@@ -20,19 +22,21 @@ export class WeatherCheckPageComponent {
 
   ngOnInit(): void {
     this.currentDate = new Date();
-    console.log(this.currentDate, 'curr');
     this.currentDate = this.datePipe.transform(
       this.currentDate,
       'EEEE, MMMM d, y'
     );
-    console.log(this.currentDate, 'convet');
+    [this.day, ...this.remaining] = this.currentDate.split(', ');
+    //console.log(day, 'currentdata---', remaining);
 
     this.getGeoLocation();
   }
 
-  getWeather(city: any) {
-    console.log(city, 'city');
+  clearText() {
+    this.city = '';
+  }
 
+  getWeather(city: any) {
     this.weatherService.getWeather(city).subscribe(
       (data) => {
         this.weatherData = data;

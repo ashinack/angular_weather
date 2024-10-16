@@ -26,6 +26,14 @@
           placeholder="Enter city name"
           value="Search"
         />
+        <span
+          class="material-symbols-outlined"
+          style="padding-right: 7px; cursor: pointer"
+          matSuffix
+          (click)="clearText()"
+        >
+          close
+        </span>
       </mat-form-field>
       <div class="btn" (click)="getWeather(city)">
         <span class="material-symbols-outlined"> location_on </span>
@@ -34,21 +42,27 @@
     <div class="image-div">
       <div class="image-sec"></div>
       <div class="Date">
-        <span class="day">Tuesday</span>
-        <span>15 Jan 2019</span>
+        <span class="day">{{ day }}</span>
+        <span>{{ remaining[0] + "," + remaining[1] }}</span>
       </div>
-      <div class="location">
-        <span>Chennai</span>
+      <div class="location"></div>
+      <div class="current-location">
+        <span class="material-symbols-outlined centered-city1">
+          location_on
+        </span>
+        <span class="centered-city"
+          >{{ weatherData != null ? weatherData.name : "" }}
+        </span>
       </div>
-      <span class="material-symbols-outlined centered-city1">
-        location_on
-      </span>
-      <span class="centered-city"
-        >{{ weatherData != null ? weatherData.name : "" }}
-      </span>
+
       @if(weatherData != null){
       <div class="centered">
-        {{ weatherData != null ? weatherData.main.temp : "" }} °C
+        <span class="temp"
+          >{{ weatherData != null ? weatherData.main.temp : "" }} °C</span
+        >
+        <span>{{
+          weatherData != null ? weatherData.weather[0].description : ""
+        }}</span>
       </div>
       }
     </div>
