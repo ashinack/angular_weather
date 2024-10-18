@@ -61,7 +61,7 @@
           >{{ weatherData != null ? weatherData.main.temp : "" }} °C</span
         >
         <span>{{
-          weatherData != null ? weatherData.weather[0].description : ""
+          weatherData != null ? weatherData.weather[0].main : ""
         }}</span>
       </div>
       }
