@@ -263,3 +263,6 @@ span {
 ::ng-deep .mat-form-field-label {
   color: #c44c4c !important;
 }
+::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
+color: white !important;
+}
