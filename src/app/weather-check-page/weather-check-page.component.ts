@@ -14,6 +14,7 @@ export class WeatherCheckPageComponent {
   currentDate: any;
   day: any;
   remaining: any;
+  backgroundImage:any
 
   constructor(
     private weatherService: WeatherService,
@@ -50,10 +51,10 @@ export class WeatherCheckPageComponent {
 
   updateBackground(weatherCondition: string) {
     switch (weatherCondition.toLowerCase()) {
-      case 'clear':
-        console.log('clear');
+      case 'mist':
+        console.log('clear111');
 
-        // this.backgroundImage = 'assets/weather-backgrounds/sunny.jpg';
+        this.backgroundImage = 'url(/assets/images/cloudy.png)';
         break;
       case 'clouds':
         console.log('clouds');

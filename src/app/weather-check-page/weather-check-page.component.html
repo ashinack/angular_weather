@@ -40,29 +40,49 @@
       </div>
     </div>
     <div class="image-div">
-      <div class="image-sec"></div>
+      <!-- <div class="image-sec"></div> -->
       <div class="Date">
         <span class="day">{{ day }}</span>
         <span>{{ remaining[0] + "," + remaining[1] }}</span>
       </div>
-      <div class="location"></div>
-      <div class="current-location">
-        <span class="material-symbols-outlined centered-city1">
-          location_on
-        </span>
-        <span class="centered-city"
-          >{{ weatherData != null ? weatherData.name : "" }}
-        </span>
+      <div class="location">
+        <!-- <span style="    font-size: 120px;" class="material-symbols-outlined">
+          favorite
+          </span> -->
+          <div class="weather-image" [ngStyle]="{'background': backgroundImage,'background-size': 'contain',
+          'background-position': 'center',
+          'background-repeat': 'no-repeat'}">
+
+          </div>
       </div>
+      
 
       @if(weatherData != null){
       <div class="centered">
-        <span class="temp"
+        <div>
+          <span class="temp"
           >{{ weatherData != null ? weatherData.main.temp : "" }} °C</span
         >
-        <span>{{
-          weatherData != null ? weatherData.weather[0].main : ""
-        }}</span>
+        </div>
+        <div class="current-location">
+          <div>
+            <span class="current-weather">{{
+              weatherData != null ? weatherData.weather[0].main : ""
+            }}</span>
+          </div>
+          <div class="location-div">
+            <!-- <span class="material-symbols-outlined centered-city1">
+              location_on
+            </span> -->
+            <span class="centered-city"
+              >{{ weatherData != null ? weatherData.name : "" }}
+            </span>
+          </div>
+          
+        </div>
+       
+      
+       
       </div>
       }
     </div>
