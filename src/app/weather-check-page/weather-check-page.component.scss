@@ -263,3 +263,9 @@ color: white !important;
   //   background-position: center;
   //   background-repeat: no-repeat;
 }
+.active {
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: green;
+}

@@ -15,6 +15,9 @@ export class WeatherCheckPageComponent {
   day: any;
   remaining: any;
   backgroundImage:any
+  position:any
+  repeat:any;
+  size:any;
 
   constructor(
     private weatherService: WeatherService,
@@ -52,31 +55,62 @@ export class WeatherCheckPageComponent {
   updateBackground(weatherCondition: string) {
     switch (weatherCondition.toLowerCase()) {
       case 'mist':
-        console.log('clear111');
-
-        this.backgroundImage = 'url(/assets/images/cloudy.png)';
+        case 'fog':
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/smog-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
+        case 'sunny':
+          case 'clear':
+          this.backgroundImage = {
+            'background-image': 'url(/assets/images/sunny-removebg-preview.png)',
+            'background-position': 'center',
+            'background-size': 'contain',
+            'background-repeat': 'no-repeat'
+          };
+          break;
       case 'clouds':
-        console.log('clouds');
-        // this.backgroundImage = 'assets/weather-backgrounds/cloudy.jpg';
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/clouds-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
       case 'rain':
-        console.log('rain');
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/rainy-day-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
       case 'drizzle':
-        console.log('drizzle');
-
-        // this.backgroundImage = 'assets/weather-backgrounds/rainy.jpg';
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/rainy-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
       case 'snow':
-        console.log('snow');
-
-        // this.backgroundImage = 'assets/weather-backgrounds/snow.jpg';
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/snow-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
       case 'thunderstorm':
-        console.log('thunderstorm');
-
-        // this.backgroundImage = 'assets/weather-backgrounds/thunderstorm.jpg';
+        this.backgroundImage = {
+          'background-image': 'url(/assets/images/thunder-removebg-preview.png)',
+          'background-position': 'center',
+          'background-size': 'contain',
+          'background-repeat': 'no-repeat'
+        };
         break;
       default:
         console.log('default');
