@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { DatePipe } from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, WeatherCheckPageComponent],
@@ -17,6 +18,7 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatButtonModule,
     MatInputModule,
   ],
   providers: [provideAnimationsAsync(), DatePipe],

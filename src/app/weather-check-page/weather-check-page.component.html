@@ -112,10 +112,11 @@
 
       <!-- <h3>More Information</h3> -->
       <div class="inside-sec">
-        <span class="material-symbols-outlined"> sunny </span>
+        <span class="material-symbols-outlined" (click)="toggleTheme()">{{ isLightThemeActive ? 'sunny' : 'dark_mode' }}</span>
         <span class="material-symbols-outlined"> explore </span>
         <span class="material-symbols-outlined"> mood </span>
       </div>
     </div>
   </div>
+  <button mat-button color=accent>Basic</button>
 </div>

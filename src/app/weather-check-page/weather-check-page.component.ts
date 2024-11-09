@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Renderer2 } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-weather-check-page',
@@ -18,22 +18,35 @@ export class WeatherCheckPageComponent {
   position:any
   repeat:any;
   size:any;
+  public isLightThemeActive: boolean = true;
+  theme:any;
 
   constructor(
     private weatherService: WeatherService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
   ) {}
 
   ngOnInit(): void {
+     this.theme =  JSON.parse(localStorage.getItem('theme') || '"light"');
+    this.isLightThemeActive=this.theme=="light"?true:false
     this.currentDate = new Date();
     this.currentDate = this.datePipe.transform(
       this.currentDate,
       'EEEE, MMMM d, y'
     );
     [this.day, ...this.remaining] = this.currentDate.split(', ');
-    //console.log(day, 'currentdata---', remaining);
-
     this.getGeoLocation();
+  }
+
+  public toggleTheme(): void {
+    this.isLightThemeActive = !this.isLightThemeActive;
+  this.theme = this.isLightThemeActive ? 'light' : 'dark';
+  this.renderer.removeClass(this.document.body, this.isLightThemeActive ? 'dark' : 'light');
+  this.renderer.addClass(this.document.body, this.theme);
+    localStorage.setItem('theme', JSON.stringify(this.theme));
+
   }
 
   clearText() {
@@ -73,6 +86,7 @@ export class WeatherCheckPageComponent {
           };
           break;
       case 'clouds':
+        case 'haze':
         this.backgroundImage = {
           'background-image': 'url(/assets/images/clouds-removebg-preview.png)',
           'background-position': 'center',
