@@ -45,4 +45,11 @@ $theme: mat.define-dark-theme((
     accent:$my-theme-accent,
   )
 ));
+.main-div{
+  background-color: #0C2D48;
+  color: white;
+}
+.weather-check-sec{
+  background-color: #06427d;
+}
 @include mat.all-component-themes($theme);

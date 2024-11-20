@@ -42,4 +42,35 @@ $theme: mat.define-light-theme((
     accent:$my-theme-accent,
   )
 ));
+.main-div{
+  background-color: #9DE3F6;
+}
+.weather-check-sec{
+  background-color: #59D7EE;
+}
+.image-div{
+  color: #53DFD1;
+
+}
+
+span {
+  color: #53DFD1;
+}
+
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__trailing {
+  border-color: #53DFD1 !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: #53DFD1 !important;
+}
+
+::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: #53DFD1 !important;
+  }
 @include mat.all-component-themes($theme);

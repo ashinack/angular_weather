@@ -25,14 +25,14 @@
 // }
 .main-div {
   height: 100%;
-  background-color: #48cbff;
+  // background-color: #48cbff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .weather-check-sec {
   width: 400px;
-  background-color: #3ca1f9;
+  // background-color: #3ca1f9;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -101,7 +101,7 @@
   margin-left: 30px;
   padding: 20px 30px 20px 30px;
   text-align: center;
-  color: white;
+  // color: white;
   background-color: rgba(255, 255, 255, 0.28);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -216,22 +216,22 @@
   font-size: 40px;
   font-weight: 800;
 }
-span {
-  color: white;
-}
+// span {
+//   color: white;
+// }
 
-::ng-deep
-  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline__leading,
-.mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline__notch,
-.mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline__trailing {
-  border-color: rgb(250, 250, 250) !important;
-}
-::ng-deep .mdc-notched-outline__trailing {
-  border-color: rgb(255, 255, 255) !important;
-}
+// ::ng-deep
+//   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+//   .mdc-notched-outline__leading,
+// .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+//   .mdc-notched-outline__notch,
+// .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+//   .mdc-notched-outline__trailing {
+//   border-color: rgb(250, 250, 250) !important;
+// }
+// ::ng-deep .mdc-notched-outline__trailing {
+//   border-color: rgb(255, 255, 255) !important;
+// }
 
 ::ng-deep .mat-form-field-placeholder {
   color: red !important;
@@ -243,9 +243,9 @@ span {
 ::ng-deep .mat-form-field-label {
   color: #c44c4c !important;
 }
-::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
-color: white !important;
-}
+// ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
+// color: white !important;
+// }
 .location-div{
   display: flex;
     flex-direction: row;
