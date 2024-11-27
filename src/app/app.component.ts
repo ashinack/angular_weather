@@ -15,8 +15,24 @@ export class AppComponent {
   ) {}
 
   ngOnInit(): void {
+    const currentHour = new Date().getHours();
+    if(currentHour >= 18 || currentHour < 6){
+      console.log("darkmode");
+      
+    }else{
+      console.log("");
+      
+    }
      this.theme = JSON.parse(localStorage.getItem('theme') || '"light"');
     //  JSON.parse(this.theme)
+    if(currentHour >= 18 || currentHour < 6){
+      this.theme='dark'
+      
+    }else{
+      this.theme="light"
+      console.log("");
+      
+    }
      console.log( this.theme,"storedTheme");
     this.renderer.addClass(this.document.body, this.theme);
   }

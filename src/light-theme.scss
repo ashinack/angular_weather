@@ -46,19 +46,18 @@ $theme: mat.define-light-theme((
   background-color: #9DE3F6;
 }
 .weather-check-sec{
-  background-color: #59D7EE;
+  background-color:  #19C3FB;
 }
 .image-div{
-  color: #53DFD1;
+  color: white;
 
 }
 
 span {
-  color: #53DFD1;
+  color: white;
 }
 
-::ng-deep
-  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled)
   .mdc-notched-outline__leading,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled)
   .mdc-notched-outline__notch,
@@ -71,6 +70,6 @@ span {
 }
 
 ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
-  color: #53DFD1 !important;
+  color: white!important;
   }
 @include mat.all-component-themes($theme);

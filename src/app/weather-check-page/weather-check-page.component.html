@@ -14,7 +14,7 @@
 <div class="main-div">
   <div class="weather-check-sec">
     <div class="search-sec">
-      <mat-form-field class="example-full-width" appearance="outline">
+      <mat-form-field class="example-full-width" appearance="outline" >
         <span class="material-symbols-outlined search-icon" matPrefix>
           search
         </span>
@@ -25,6 +25,7 @@
           [(ngModel)]="city"
           placeholder="Enter city name"
           value="Search"
+          (keyup.enter)="getWeather(city)"
         />
         <span
           class="material-symbols-outlined"

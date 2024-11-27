@@ -29,7 +29,17 @@ export class WeatherCheckPageComponent {
   ) {}
 
   ngOnInit(): void {
+    const currentHour = new Date().getHours();
+
      this.theme =  JSON.parse(localStorage.getItem('theme') || '"light"');
+     if(currentHour >= 18 || currentHour < 6){
+      this.theme='dark'
+      
+    }else{
+      this.theme="light"
+      console.log("");
+      
+    }
     this.isLightThemeActive=this.theme=="light"?true:false
     this.currentDate = new Date();
     this.currentDate = this.datePipe.transform(

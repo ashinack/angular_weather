@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb); /* Gradient background */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .details {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .detail-card {
+    width: 120px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.15); /* Glassy effect base */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glassy effect */
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    backdrop-filter: blur(10px); /* Glassy blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+  
+  .detail-card .icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .detail-card p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  .detail-card h3 {
+    margin: 5px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
