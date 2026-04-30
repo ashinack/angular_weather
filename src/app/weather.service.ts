@@ -28,7 +28,7 @@ export class WeatherService {
           },
           (error) => {
             observer.error(error);
-          }
+          },
         );
       } else {
         observer.error('Geolocation is not available in this browser.');
@@ -40,5 +40,17 @@ export class WeatherService {
     // Construct the URL with latlng and API key
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${this.apiKey}`;
     return this.http.get(url);
+  }
+
+  getCitySuggestions(query: string) {
+    return this.http.get(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${this.apiKey}`,
+    );
+  }
+
+  get5DayForecast(city: string) {
+    return this.http.get(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`,
+    );
   }
 }

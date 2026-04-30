@@ -43,18 +43,24 @@ $theme: mat.define-light-theme((
   )
 ));
 .main-div{
-  background-color: #9DE3F6;
+  // background-color: #9DE3F6;
+    background: linear-gradient(135deg, #eaf4fb, #d6ecfb);
 }
 .weather-check-sec{
-  background-color:  #19C3FB;
+  // background-color:  #19C3FB;
+   background: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 .image-div{
-  color: white;
+  // color: white;
+   background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
 
 }
 
 span {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled)
@@ -71,5 +77,9 @@ span {
 
 ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
   color: white!important;
+  }
+
+  ::ng-deep .mat-mdc-option .mdc-list-item__primary-text{
+    color: black !important;
   }
 @include mat.all-component-themes($theme);

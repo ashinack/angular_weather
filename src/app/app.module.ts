@@ -9,8 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { DatePipe } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [AppComponent, WeatherCheckPageComponent],
   imports: [
@@ -20,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatButtonModule,
     MatInputModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
   ],
   providers: [provideAnimationsAsync(), DatePipe],
   bootstrap: [AppComponent],
